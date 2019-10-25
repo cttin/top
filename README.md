@@ -35,32 +35,32 @@
   4.父子组件传值
     - WXML 数据绑定  
     用于父组件向子组件的指定属性设置数据。     
-    A（父组件）中引入B（子组件）  
-      ```
-      <componentB paramAtoB='我是A向B中传入的参数'/> 
-      ``` 
-    B（子组件）接收A（父组件）的数据   
-      ```
-      properties: {
-        paramAtoB: String // B组件（子）
-      },
-      ```
+      A（父组件）中引入B（子组件）  
+        ```
+        <componentB paramAtoB='我是A向B中传入的参数'/> 
+        ``` 
+      B（子组件）接收A（父组件）的数据   
+        ```
+        properties: {
+          paramAtoB: String // B组件（子）
+        },
+        ```
     - 事件  
-    用于子组件向父组件传递数据，可以传递任意数据。
-    A（父组件）接收B（子组件）的事件，进行相应的操作：
-      ```
-      <componentB bind:eventBtoA='eventBtoA'/> // A组件中引入B组件
-      ...
-      eventBtoA(e) {
+      用于子组件向父组件传递数据，可以传递任意数据。
+      A（父组件）接收B（子组件）的事件，进行相应的操作：
+        ```
+        <componentB bind:eventBtoA='eventBtoA'/> // A组件中引入B组件
         ...
-      }
-      ```
-    B（子组件）触发A（父组件）的方法：  
-      ```
-      this.triggerEvent('eventBtoA', {
-        'XXX': 123
-      })
-      ```
+        eventBtoA(e) {
+          ...
+        }
+        ```
+      B（子组件）触发A（父组件）的方法：  
+        ```
+        this.triggerEvent('eventBtoA', {
+          'XXX': 123
+        })
+        ```
     - `this.selectComponent`  
     父组件可以通过`this.selectComponent`获取子组件实例对象，这样就可以访问子组件的任意方法。   
     使用时要注意几点：   
