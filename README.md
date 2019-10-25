@@ -31,8 +31,8 @@
   [微信小程序设置 backgroundColor 无效的问题](https://www.jianshu.com/p/e5bf778ac1d4)    
   2.自定义组件使用报错   
   [微信小程序——自定义组件时，编译报`Component is not found in path '...'`](https://blog.csdn.net/u014490083/article/details/81026601?utm_source=blogxgwz0)  
-  3.swiper默认高度150px，超过不显示，所以页面如果较长，可能需要设置合适的高度，如首页中。  
-  4.父子组件传值
+  3.swiper默认高度150px，超过不显示，所以页面如果较长，可能需要设置合适的高度，如首页中。    
+  4.父子组件传值  
     - WXML 数据绑定  
     用于父组件向子组件的指定属性设置数据。     
       A（父组件）中引入B（子组件）  
@@ -74,7 +74,7 @@
     ③ 要注意时机，要等元素渲染了再去获取。    
     ④ 如果用了`wx:if`有可能为null。  
       
-  5.通过数据绑定动态改变video的宽高、image不要通过style设置样式。  
+  5.通过数据绑定动态改变video的宽高、image不要通过style设置样式。      
   6.video组件  
   项目列表页和详情页都可能有视频的的播放，这里封装了微信官方的video组件，使用`cover-view`和`cover-image`覆盖在原生组件上面。
     - 播放  
@@ -86,9 +86,9 @@
     - 设置宽高  
     通过`behaviors/setVideoSize.js`设置宽高，通过屏幕宽度以及左右边距来设置视频容器的大小。 
     
-  7.template模板与component组件
+  7.template模板与component组件    
   template和component组件是小程序中常见的组件化方式，两者的区别是template模板主要是展示，方法需要在引用template的页面定义，传入的仅仅是数据。而component组件有自己的JS文件，整个component组件类似一个page页面。如果仅仅是数据的展示，建议使用template，如果涉及到较多的逻辑，建议使用component。  
-  8.瀑布流布局 
+  8.瀑布流布局   
   瀑布流分为左右两列，分别对应左右的数据源，主要是数据源的处理。左右两边的数据如何分配？左右各定义一个高度`leftHeight`、`rightHeight`，来分别记录左右容器的高度，如果左边的高度大于右边的高度，则把下一个元素放在右边，并且右边的高度叠加新加元素的高度；如果右边的高度大于左边的高度也是同样的道理。  
   使用的话就是首先在对应页面的json文件中引入：  
     ```
@@ -109,7 +109,7 @@
     ```
   在写首页瀑布流的时候，给图片设置好了宽度和高度，最终的效果宽度是设置的值，但高度总是不对，找了很久的原因，后面才发现是设置了`mode:widthFix`，宽度不变，高度自动变化的原因。 
   
-  9.生命周期  
+  9.生命周期    
   生命周期分为组件生命周期和页面生命周期。  
   * 组件生命周期  
   小程序组件生命周期在[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html)也有介绍，但是没有明确说明有哪些生命周期钩子函数。这里简单的列一下。  
