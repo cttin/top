@@ -1,0 +1,24 @@
+/* pages/login/login.wxss */
+.login{
+  display: none;
+}
+.show{
+  display: block;
+}
+.login-img{
+  background-image: url(https://cdn.pixabay.com/photo/2017/02/03/11/27/ripped-2034946__480.png);
+  background-size: cover;  
+  height: 500rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.login-des{
+  width: 500rpx;
+  margin: 50rpx auto;
+  letter-spacing: 4rpx;
+}

@@ -1,0 +1,35 @@
+like_collection
+点赞表
+表字段 表字段数据类型 字段说明
+`_id`	String '评论id'
+`avatar` String
+`name` String
+`post_id`	对应的作品或评论的id
+type	点赞类型  1作品点赞  2 评论点赞 3....
+_openid	用户id
+
+通过云函数计算出另外两个字段返回给小程序
+`count` Number ❤️的总数
+`status` String 点赞状态  0--不喜欢   1--喜欢
+`_id` String 当前用户点赞那条记录的id
+
+{
+  "result": {
+    "data": [
+      {
+        "_id": "1af3506e5d994c450bdcec4d6c6ba355",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "type": 1
+      }
+    ],
+    "errMsg": "collection.get:ok",
+    "status": 1,
+    "_id": "1af3506e5d994c450bdcec4d6c6ba355",
+    "count": 1,
+    "errCode": "200"
+  },
+  "requestID": "982999b7-f590-11e9-8ff0-525400dee61a"
+}

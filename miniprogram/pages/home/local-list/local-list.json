@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "waterFall": "/components/waterFall/waterFall"
+  }
+}

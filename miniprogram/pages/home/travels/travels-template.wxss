@@ -1,0 +1,13 @@
+.travels .image {
+  flex-direction: row;
+  height: 320rpx;
+}
+.travels .image-commom {
+  width: 100%;
+}
+.travels .image-xl {
+  height: 100%;
+}
+.travels .image-lg {
+  height: 50%;
+}

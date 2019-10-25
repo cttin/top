@@ -1,0 +1,10 @@
+.shop-common {
+  background: #fff;
+}
+.shop-common .image{
+  width: 100%;
+  height: 100%;
+}
+.shop-common .overview {
+  height: 200rpx;
+}

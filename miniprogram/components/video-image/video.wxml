@@ -1,0 +1,52 @@
+<!--components/video/video.wxml-->
+<view class="video_img--wrap">
+  <!-- 视频 -->
+  <view class="video-wrap video_img--ele" data-touch-target="video"  capture-bind:touchstart="touchStart" capture-bind:touchmove="touchMove">
+    <video style="width: {{videoWidth}}px;height: {{videoHeight}}px" src="{{listVideoInfo.videoUrl}}" bindfullscreenchange="handleFullScreenChange" bindended="handleVideoEnded" id="video" autoplay="{{autoplay}}" loop="{{false}}" controls="{{true}}" show-center-play-btn="{{false}}"
+      class="video-wrap video_img--ele {{left ? 'video_wrap--hidden':'video_wrap--show'}}">
+      <cover-view class="video_view--container" wx:if="{{!play}}">
+        <!-- 覆盖图片 -->
+        <cover-image src="{{listVideoInfo.coverUrl}}" class="cover-image">
+        </cover-image>
+        <!-- 播放按钮 -->
+        <cover-view class="control-btn" catchtap="controlVideo">
+          <cover-image src="https://si.geilicdn.com/img-4933000001685b263c400a20b7b9-unadjust_100_100.png"></cover-image>
+        </cover-view>
+      </cover-view>
+      <!-- 播放时保留视频图片组合按钮 -->
+      <cover-view class="btns-wrap" bindtap="handleSwapeShow" wx:if="{{!fullScreen}}">
+        <cover-view class="btn-video btns-common {{ video ? 'btns-active' : '' }}" data-target="video">
+          视频
+        </cover-view>
+        <cover-view class="btn-image btns-common {{ video ? '' : 'btns-active' }}" data-target="image">
+          图片
+        </cover-view>
+      </cover-view>
+      <!-- 播放结束保留视频图片组合按钮 -->
+      <cover-view class="btns-wrap" bindtap="handleSwapeShow" wx:if="{{!play}}">
+        <cover-view class="btn-video btns-common {{ video ? 'btns-active' : '' }}" data-target="video">
+          视频
+        </cover-view>
+        <cover-view class="btn-image btns-common {{ video ? '' : 'btns-active' }}" data-target="image">
+          图片
+        </cover-view>
+      </cover-view>
+    </video>
+  </view>
+  <!-- 图片 -->
+  <view class="img-wrap video_img--ele {{left?'video_wrap--show':'video_wrap--hidden'}}">
+    <swiper class="screen-swiper video-img--ele {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="{{false}}" interval="5000" duration="500" style="height: {{videoHeight}}px;">
+      <swiper-item wx:for="{{swiperList}}" wx:key>
+        <image src="{{item.url}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+    <view class="btns-wrap" bindtap="handleSwapeShow" wx:if="{{left}}">
+        <view class="btn-video btns-common {{ video ? 'btns-active' : '' }}" data-target="video">
+            视频
+        </view>
+        <view class="btn-image btns-common {{ video ? '' : 'btns-active' }}" data-target="image">
+            图片
+        </view>
+    </view>
+  </view>
+</view>

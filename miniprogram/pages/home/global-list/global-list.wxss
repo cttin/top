@@ -1,0 +1,14 @@
+@import "../strategy/strategy-template";
+@import "../travels/travels-template";
+page {
+  background: #fff;
+} 
+.global .cu-item {
+  border-radius: 20rpx;
+}
+/* was em {
+  border-radius: 20rpx;
+} */
+.global .sub-text {
+  width: calc(100% - 96rpx - 60rpx - 20rpx);
+}

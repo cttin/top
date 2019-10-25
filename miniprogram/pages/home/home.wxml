@@ -1,0 +1,203 @@
+<!--home.wxml-->
+<view>
+  <!-- <image src="https://cdn.pixabay.com/photo/2014/09/19/12/30/pencils-452238__480.jpg" mode="widthFix" class="png" style="width:100%;height:50rpx"></image>
+  https://cdn.pixabay.com/photo/2012/03/02/00/41/background-20862__480.jpg
+  https://cdn.pixabay.com/photo/2014/05/03/01/01/leaves-336694__480.jpg -->
+  <cu-custom bgImage="https://cdn.pixabay.com/photo/2014/05/03/01/01/leaves-336694__480.jpg">
+    <view slot="content">首页</view>
+  </cu-custom>
+  <view class="top-bar {{isFixed ? 'position-fixed' : ''}}" style="top:{{CustomBar}}px">
+    <view class="cu-bar search bg-white">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索美食、景点、酒店" confirm-type="search" bindfocus="onFocus"></input>
+      </view>
+    </view>
+    <scroll-view scroll-x class="bg-white nav" bindscrolltoupper="topLoad">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub {{index == currentActiveNavIndex?'text-cerulean cur':''}}" wx:for="{{tabs}}" wx:key bindtap="topNavChange" data-current-index="{{index}}" id="{{item.id}}" type="{{item.type}}">
+          {{item.name}}
+          <text wx:if="{{!index}}" class="cuIcon-evaluate_fill"></text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="swiper-list">
+    <!-- <swiper style="height: {{wrapHeight}}rpx;" bindchange="swiperChange" current="{{currentActiveNavIndex}}" duration="{{500}}" easing-function="easeInOutCubic"> -->
+    <swiper style="height: {{wrapHeight}}rpx;" bindchange="swiperChange" current="{{currentActiveNavIndex}}" duration="{{500}}" easing-function="easeInOutCubic">
+      <swiper-item>
+        <waterFall wx:if="{{currentActiveNavIndex === 0}}" id="recommend" bind:getHeight="handleHeight" />
+      </swiper-item>
+      <swiper-item>
+        <waterFall wx:if="{{currentActiveNavIndex === 1}}" id="local" bind:getHeight="handleHeight" />
+      </swiper-item>
+      <swiper-item>
+        <global-list wx:if="{{currentActiveNavIndex === 2}}" id="internal" bind:getHeight="handleHeight" />
+      </swiper-item>
+      <swiper-item>
+        <global-list wx:if="{{currentActiveNavIndex === 3}}" id="abroad" bind:getHeight="handleHeight" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- <view hidden="{{postsInfo.hasMore}}" class="cu-load over"></view> -->
+</view>
+
+<!-- 搜索弹框 -->
+<view class="search-modal cu-modal bottom-modal {{historyModalVisible?'show':''}}" style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+  <view class="cu-dialog">
+    <view style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+      <view class="top-bar bg-white">
+        <view class="cu-bar search">
+          <view class="search-form round">
+            <text class="cuIcon-search"></text>
+            <input type="text" placeholder="{{placeHolder}}" value="{{inputVal}}" confirm-type="search" bindconfirm="onSearch"></input>
+          </view>
+          <view class="action">
+            <button class="cu-btn shadow-blur round bg-white" bindtap="cancelSearch">取消</button>
+          </view>
+        </view>
+        <view wx:if="{{inputVal}}">
+          <scroll-view scroll-x class="nav shadow bg-white margin-bottom-xs" scroll-with-animation scroll-left="{{scrollLeft}}">
+            <view class="cu-item {{index==TabCur?'text-pink cur':''}}" wx:for="{{searchTabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+              {{item.name}}
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <view wx:if="{{inputVal}}">
+        <!-- <view class="bg-white"> -->
+        <!-- <scroll-view scroll-x class="nav shadow bg-white margin-bottom-xs fixed" scroll-with-animation scroll-left="{{scrollLeft}}">
+          <view class="cu-item {{index==TabCur?'text-pink cur':''}}" wx:for="{{searchTabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+            {{item.name}}
+          </view>
+        </scroll-view> -->
+        <!-- </view> -->
+
+        <view class="destination bg-white margin-bottom-xs padding-bottom">
+          <view class="cardTitle">目的地</view>
+          <view class="cu-list menu card-menu shadow-lg">
+            <!-- <view class="cu-item arrow" wx:for="{{20}}" wx:key="index"> -->
+            <view class="cu-item arrow">
+              <view class="content">
+                <image src="https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204__480.jpg" mode="aspectFill" class="radius image"></image>
+                <text class="text-grey">云南</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="hot-spot bg-white margin-bottom-xs padding-bottom">
+          <view class="cardTitle">热门景点</view>
+          <scroll-view scroll-x scroll-with-animation class="nav">
+            <view class="cu-item flex">
+              <image src="https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204__480.jpg" mode="aspectFill" class="radius image"></image>
+              <view class="text-center">泸沽湖</view>
+              <view class="text-center text-sm">
+                <text>232</text>
+                <text class="text-gray"> 评论</text>
+              </view>
+            </view>
+            <view class="cu-item flex">
+              <image src="https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204__480.jpg" mode="aspectFill" class="radius image"></image>
+              <view class="text-center">泸沽湖</view>
+              <view class="text-center text-sm">
+                <text>232</text>
+                <text class="text-gray"> 评论</text>
+              </view>
+            </view>
+            <view class="cu-item flex">
+              <image src="https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204__480.jpg" mode="aspectFill" class="radius image"></image>
+              <view class="text-center">泸沽湖</view>
+              <view class="text-center text-sm">
+                <text>232</text>
+                <text class="text-gray"> 评论</text>
+              </view>
+            </view>
+            <view class="cu-item flex">
+              <image src="https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204__480.jpg" mode="aspectFill" class="radius image"></image>
+              <view class="text-center">泸沽湖</view>
+              <view class="text-center text-sm">
+                <text>232</text>
+                <text class="text-gray"> 评论</text>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+
+        <view class="route bg-white margin-bottom-xs">
+          <view class="cardTitle">行程路线</view>
+          <view class="route solid-bottom cu-card radius">
+            <view class="flex margin-left margin-right margin-bottom">
+              <view class="flex-twice">
+                <image src="https://cdn.pixabay.com/photo/2016/05/21/13/42/wildflowers-1406846__480.jpg" mode="aspectFill" class="radius image"></image>
+              </view>
+              <view class="margin-left-sm flex-treble">
+                <view class="text-black text-bold">
+                  周末京郊到昌平，五大体验征服你！
+                </view>
+                <view class="text-gray text-sm margin-top-xs">最佳季节：3-5月，9-11月</view>
+                <view class="text-gray text-sm text-cut margin-top-xs">游玩2-3天 | 3-5月最佳 | 9-11月温度最适宜 | 节假日人流量可能较多</view>
+              </view>
+            </view>
+          </view>
+          <view>
+          </view>
+        </view>
+
+        <view class="hotel bg-white margin-bottom-xs">
+          <view class="cardTitle">热门酒店</view>
+          <view class="solid-bottom cu-card radius">
+            <view class="flex margin-left margin-right margin-bottom">
+              <view class="flex-twice">
+                <image src="https://i.loli.net/2019/09/30/hLmCXgqNv5VxZy3.jpg" mode="aspectFill" class="radius image"></image>
+              </view>
+              <view class="margin-left-sm flex-treble">
+                <view class="overview">
+                  <view class="text-black text-bold">
+                    南京禄口机场亚朵酒店
+                  </view>
+                  <view>
+                    <text class="border-bottom text-bold text-lg">4.8</text>
+                    <text class="margin-left-sm">33</text>
+                    <text class="text-gray text-sm"> 点评</text> ·
+                    <text>64</text>
+                    <text class="text-gray text-sm"> 收藏</text>
+                  </view>
+                  <view class="text-gray text-sm text-cut margin-top-sm">位于禄口机场旁边</view>
+                  <view class="margin-top-sm">
+                    <text class="cu-tag bg-blue light">购物天堂</text>
+                    <text class="cu-tag bg-blue light">中转停留</text>
+                  </view>
+                </view>
+                <view>
+                  <text class="text-price text-red price">4234</text>
+                  <text class="text-gray"> 起</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- <waterFall bind:getHeight="handleHeight" /> -->
+      </view>
+      <view wx:else class="padding">
+        <view class="margin-right-lg flex align-center justify-between margin-top-history">
+          <text>历史记录</text>
+          <text class="cuIcon-delete lg" bindtap="deleteHistory"></text>
+        </view>
+        <view class="margin-top flex flex-wrap">
+          <view class="margin-right-xs" wx:for="{{history}}" wx:key>
+            <view class="cu-tag" bindtap="onClickHistory" data-target="{{item}}">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="cu-bar bg-white"> -->
+    <!-- <view class="action text-green">确定</view>
+        <view class="action text-blue" bindtap="hideModal">取消</view> -->
+    <!-- </view> -->
+    <!-- <view class="padding-xl">
+        Modal 内容。
+      </view> -->
+  </view>
+</view>

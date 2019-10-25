@@ -1,0 +1,226 @@
+recommend_collection
+列表页集合：recommend、local、internal、abroad；spot、route、hotel、food、shopping，不同tab暂定为同一个集合，但列表渲染模板可能不同
+包括的列表：推荐、当地、国内、国外
+表字段 表字段数据类型 字段说明
+`_id` String '文章id'
+`_openid` String '作者id' 
+`type` String '列表类型'
+`hot` Number 热度
+`createtime` Number '创建时间'
+`updatetime` Number '更新时间'
+`author_name` String '作者名字'
+`avatar` String '头像'
+`view` Number '阅读数量'
+`keyword` String '关键词'
+`summary` String '帖子列表页概览总结语'
+`title` String '标题'
+`location` String '地址'
+`starttime` Number '出发时间' 
+`days` Number '出行天数' 
+`cost` Number '人均费用'
+`detail` Object '图文内容'
+`cover` Object '列表页封面'
+`category` String 种类，游记、攻略。。。
+
+推荐：recommend
+{
+  "result": {
+    "data": [
+      {
+        "_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "category": "note",
+        "author_name": "charlence",
+        "avatar": "https://i.loli.net/2019/09/28/xOBYwV8qkrs5imM.jpg",
+        // "comment": 5,
+        "cost": 0,
+        "cover": {
+          "height": 428,
+          "url": "https://cdn.pixabay.com/photo/2019/08/02/23/09/banff-4380804__480.jpg",
+          "width": 320,
+        },
+        "createtime": 1570196174366,
+        "days": 1,
+        "detail": {
+          "content": [
+            {
+              "images": [],
+              "text": "深圳大小梅沙素有“东方夏威夷”之称，又称“梅沙踏浪”，为“鹏城十景”之一。\\n其中大梅沙海滨公园位于盐田港和小梅沙之间，是距离深圳市区最近的海滨度假胜地(车程半小时)。\\n小梅沙则是深圳最早开辟的海滨浴场，这里三面青山环抱，柔软的沙滩似一弯新月，夏日里色彩明快、生机盎然，吸引着无数弄潮儿。\\n特别提示\\n1. 由于是免费开放的海滩，大梅沙相对旁边收费的小梅沙来说人多了很多，节假日更是人多到煮饺子，强烈建议错峰前往。\\n2. 公园内悬挂红色旗，即为泳场关闭信号，禁止游客在此时下海游泳;悬挂黄色旗，即为泳场半关闭信号，泳技一般者请勿下海。\\n3. 烧烤场仅夏天开放，和朋友一起来海边烧烤聚会是挺不错的体验。\\n4. 游玩时，请记得带走垃圾，保持海滩的清洁。"
+            }
+          ],
+          "cover": [ // 详情页封面
+            {
+              "type": "video",
+              "url": "https://static.videezy.com/system/resources/previews/000/037/904/original/170814-treeInRack02_UHD4k_PhotoJPEC95.mp4"
+            },
+            {
+              "type": "image",
+              "url": "https://cdn.pixabay.com/photo/2019/08/02/23/09/banff-4380804__480.jpg"
+            },
+            {
+              "type": "image",
+              "url": "https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-cone-1274894__480.jpg"
+            },
+            {
+              "type": "image",
+              "url": "https://cdn.pixabay.com/photo/2014/05/21/14/53/pier-349672__480.jpg"
+            },
+            {
+              "type": "image",
+              "url": "https://cdn.pixabay.com/photo/2016/11/29/03/46/beach-1867137__480.jpg"
+            },
+            {
+              "type": "image",
+              "url": "https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704__480.jpg"
+            }
+          ]
+        },
+        "hot": 0,
+        "keyword": "深圳，大小梅沙",
+        "location": "大小梅沙",
+        "starttime": 1570196174366,
+        "summary": "深圳大小梅沙素有“东方夏威夷”之称，又称“梅沙踏浪”，为“鹏城十景”之一",
+        "title": "深圳大小梅沙等你来呀",
+        "type": "recommend",
+        "updatetime": 1570196174366,
+        "view": 27
+      }
+    ],
+    "errMsg": "collection.get:ok",
+    "hasMore": false,
+    "errCode": "200"
+  },
+  "requestID": "c2c5c564-f5ee-11e9-b21f-525400697544"
+}
+
+
+// 国内：internal
+[
+  {
+  "_id": "",
+  "_openid": "",
+  "type": "internal",
+  "hot": 7, '搜索热度'
+  "createtime": "", '创建时间'
+  "updatetime": "", '更新时间'
+  "author_name": "", '作者名字'
+  "avatar": , '头像'
+  "view": 1, '阅读数量'
+  "keyword": "西安",
+  "summary": "", '帖子列表页概览'
+  // "media": [{
+  //   "type": "video",
+  //   "url": "https://static.videezy.com/system/resources/previews/000/037/904/original/170814-treeInRack02_UHD4k_PhotoJPEC95.mp4"
+  // }],
+
+  "title": "穷游西安三天两夜",
+  "location"": "西安",
+  "starttime": // 出发时间
+  "days": // 出行天数
+  "cost": // 人均费用
+  "detail": {
+    "content": [
+      { // content采用数组的形式，因为可能会是一段文字一张图片的渲染
+        "text": "我可能只有一段文字哦",
+        "images": [] // 图片可能有多张
+      }
+    ],
+    "cover": []
+  },
+  "cover": {
+    "width": 320,
+    "height": 428,
+    "url": "https://static.videezy.com/system/resources/previews/000/037/904/original/170814-treeInRack02_UHD4k_PhotoJPEC95.mp4"
+  }, // 封面
+  "category": "spot", // 种类，游记、攻略。。。
+}, 
+{
+  "_id": "",
+  "_openid": "",
+  "type": "internal",
+  "hot": 7, '搜索热度'
+  "createtime": "", '创建时间'
+  "updatetime": "", '更新时间'
+  "author_name": "", '作者名字'
+  "avatar": , '头像'
+  "view": 1, '阅读数量'
+  "keyword": "昌平",
+  "summary": "", '帖子列表页概览'
+  // "media": [
+  //   {
+  //     "type": "video",
+  //     "url": "https://static.videezy.com/system/resources/previews/000/037/904/original/170814-treeInRack02_UHD4k_PhotoJPEC95.mp4"
+  //   }
+  // ],
+  "title": "周末京郊到昌平，五大体验征服你！",
+  "location"": "昌平",
+  "starttime": , // 出发时间 "days": // 出行天数 "cost": // 人均费用 
+  "detail": {
+    "content": [
+      { // content采用数组的形式，因为可能会是一段文字一张图片的渲染
+        "text": "",
+        "images": [
+          "https://cdn.pixabay.com/photo/2019/09/11/14/08/rainbow-4468783__480.jpg"
+        ] // 图片可能有多张
+      },
+      {
+        "text": "",
+        "images": [
+          "https://cdn.pixabay.com/photo/2019/08/28/21/38/borgo-4437756__480.jpg",
+          "https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__480.jpg"
+        ]
+      }
+    ],
+    "cover": []
+  },
+  "cover": {
+    "width": 320,
+    "height": 428,
+    "url": "https://cdn.pixabay.com/photo/2016/05/21/13/42/wildflowers-1406846__480.jpg",
+    "coverUrl": "https: //cdn.pixabay.com/photo/2014/05/03/01/04/manhattan-336708__480.jpg"
+  }, // 封面
+  "category": "strategy", // 种类，游记、攻略。。。
+}, 
+{
+  "_id": "",
+  "_openid": "", 
+  "type": "internal",
+  "hot": 7, '搜索热度'
+  "createtime": "", '创建时间'
+  "updatetime": "", '更新时间'
+  "author_name": "", '作者名字'
+  "avatar": , '头像'
+  "view": 1, '阅读数量'
+  "keyword": "贵州",
+  "summary": "", '帖子列表页概览'
+  // "media": [{
+  //     "type": "video",
+  //     "url": "https://static.videezy.com/system/resources/previews/000/037/904/original/170814-treeInRack02_UHD4k_PhotoJPEC95.mp4"
+  //   }],
+  "title": "对不起，来迟了，三天四晚，贵州之旅，我来啦！",
+  "location"": "贵州",
+  "starttime": , // 出发时间 "days": // 出行天数 "cost": // 人均费用 
+  "detail": {
+    "content": [{ // content采用数组的形式，因为可能会是一段文字一张图片的渲染
+      "text": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2019/09/11/14/08/rainbow-4468783__480.jpg"
+      ] // 图片可能有多张
+    },
+    {
+      "text": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2019/08/28/21/38/borgo-4437756__480.jpg",
+        "https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__480.jpg"
+      ]
+    }
+    ],
+    "cover": []
+  },
+  "cover": {
+    "width": 320,
+    "height": 428,
+    "url": "https://cdn.pixabay.com/photo/2019/09/11/14/08/rainbow-4468783__480.jpg"
+  }, // 封面
+  "category": "travels", // 种类，游记、攻略。。。
+}]

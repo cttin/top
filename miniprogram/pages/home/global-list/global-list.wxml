@@ -1,0 +1,8 @@
+<import src="../spot/spot-template" />
+<import src="../strategy/strategy-template" />
+<import src="../travels/travels-template" />
+<view class="global" wx:for="{{listData}}" wx:key>
+  <template is="spot" wx:if="{{item.spot}}" data="{{totalMargin: totalMargin, ...item.spot}}" ></template>
+  <template is="strategy" wx:if="{{item.strategy}}" data="{{...item.strategy}}"></template>
+  <template is="travels" wx:if="{{item.travels}}" data="{{...item.travels}}"></template>
+</view>

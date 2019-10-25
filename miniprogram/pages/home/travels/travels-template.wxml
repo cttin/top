@@ -1,0 +1,21 @@
+<template name="travels">
+  <view class="travels gap">
+    <view class="nav-title">{{title}}</view>
+    <view class="flex image">
+      <view class="flex-twice margin-right-xs">
+        <image src="{{cover.url}}" class="radius image-commom image-xl" mode="aspectFill"></image>
+      </view>
+      <view class="flex-sub flex flex-direction">
+        <image src="{{detail.content.length && detail.content[0].images[0]}}" class="margin-bottom-xs radius image-commom image-lg" mode="aspectFill"></image>
+        <image src="{{detail.content.length && detail.content.length > 1 && detail.content[1].images[0]}}" class="radius image-commom image-lg" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="margin-top-sm text-gray text-sm flex justify-between align-center">
+      <view class="cu-tag radius bg-cyan light">游记</view>      
+      <view class="text-gray text-sm">
+        <text class="cuIcon-attentionfill margin-lr-xs"></text> {{view}}
+        <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,168 @@
+comment_collection
+用户评论表
+表字段 表字段数据类型 字段说明
+`_id` String '文章评论表id'
+`post_id` String 文章id
+`_openid` String '用户id'
+`name` String '用户昵称'
+`avatar` String '头像'
+`content` String '评论内容'
+`createtime` Number '创建时间（时间戳）'
+`status` Number '状态  0已删除 1正常'
+`to_open_id` String 目标用户id
+`to_user_avatar` String '目标用户头像'
+`to_user_name` String '目标用户名字'
+
+
+{
+  "result": {
+    "data": [
+      {
+        "_id": "2c94992a5da2e28c041161e0313c14ef",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "我又来啦😝",
+        "createtime": 1570955915692,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "3397e9015d99d9a30c48fee31f64618f",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "不想评论你",
+        "createtime": 1570363810985,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "test",
+        "to_user_avatar": "https://image.weilanwl.com/img/square-3.jpg",
+        "to_user_name": "christina"
+      },
+      {
+        "_id": "f885cb355d99d9820c49866d573b4d49",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "😔还没搞好呢",
+        "createtime": 1570363778479,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "075734515d99d9710c49731f7eb5e5cb",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "好快啊。假期快没了。😭",
+        "createtime": 1570363760088,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "f885cb355d99d8770c4887bd680d4ef0",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "en",
+        "createtime": 1570363511074,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "f885cb355d99d8660c48778400d08524",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "hhh",
+        "createtime": 1570363494210,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "1af3506e5d999bae0c1941b419aad78f",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "\\(^o^)/~",
+        "createtime": 1570347949251,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "075734515d9938770bcfb1bb062da2cc",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "今天天气好",
+        "createtime": 1570322551043,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "3397e9015d98c1e10bb305f932649633",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "😸",
+        "createtime": 1570292192705,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      },
+      {
+        "_id": "0f49d140-e4f9-48a5-856e-67b3c3115278",
+        "_openid": "op9H-47XKV43E8LQngM2ToSJV44g",
+        "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibtTdDicknUHeJXtibCmjrD2iaXMOdaj4MvIvCGkZWdWPCnDSO396J69iahKpwicCuticyArgXBoXlnQjw/132",
+        "content": "这就是我的评论啊",
+        "createtime": 1570270601358,
+        "name": "酸奶酸不酸",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "test",
+        "to_user_avatar": "https://image.weilanwl.com/img/square-3.jpg",
+        "to_user_name": "christina"
+      },
+      {
+        "_id": "62443d48-c62c-4ccb-bff9-567a616103fd",
+        "_openid": "test",
+        "avatar": "https://image.weilanwl.com/img/square-3.jpg",
+        "content": "你评论了嘛",
+        "createtime": 1570070600000,
+        "name": "christina",
+        "post_id": "d61458e3-ec4e-4e19-bd1c-5a1ad8b833a3",
+        "status": 1,
+        "to_open_id": "",
+        "to_user_avatar": "",
+        "to_user_name": ""
+      }
+    ],
+    "errMsg": "collection.get:ok",
+    "errCode": "200"
+  },
+  "requestID": "98285b98-f590-11e9-8ff0-525400dee61a"
+}

@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="home-container">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索美食、景点、酒店" confirm-type="search"></input>
+    </view>
+  </view>
+  <view>
+    <scroll-view scroll-x class="bg-white nav">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub {{index == currentActiveNavIndex?'text-orange cur':''}}" wx:for="{{tabs}}" wx:key bindtap="topNavChange" data-id="{{index}}">
+          {{item}}
+          <text wx:if="{{!index}}" class="cuIcon-evaluate"></text>
+        </view>
+      </view>
+    </scroll-view>
+    <swiper style="height: {{wrapHeight}}rpx;" bindchange="swiperChange" current="{{currentActiveNavIndex}}">
+      <swiper-item wx:for="{{tabs}}" wx:key>
+        <waterFall id="water-fall" bind:getHeight="handleHeight" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>

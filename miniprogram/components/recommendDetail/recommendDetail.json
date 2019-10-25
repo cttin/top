@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "video-play": "/components/video/video"
+  }
+}

@@ -1,0 +1,45 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+page{
+  --yellow: rgb(233, 233,160);
+  --pink: rgb(245,205,202);
+  --cerulean: rgb(144,232,245);
+
+  height: 100%;
+  /* background-color: #f6f6f6; */
+}
+.text-cerulean {
+  color: var(--cerulean);
+}
+.bg_rank--pink {
+  background: var(--pink);
+  color: #fff;
+}
+.bg_rank--cerulean {
+  background: var(--cerulean);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  box-sizing: border-box;
+} 
+.nav-title {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.nav-title::first-letter {
+  font-size: 40rpx;
+  margin-right: 4rpx;
+}
+.gap {
+  padding: 30rpx 40rpx;
+}
+.self-align--center {
+  position: absolute;
+  /* top: 50%; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+

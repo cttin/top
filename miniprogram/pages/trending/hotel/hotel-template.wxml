@@ -1,0 +1,32 @@
+<template name="hotel">
+  <view class="hotel solid-bottom cu-card radius margin">
+    <view class="flex margin-sm">
+      <view class="flex-twice">
+        <image src="https://i.loli.net/2019/09/30/hLmCXgqNv5VxZy3.jpg" mode="aspectFill" class="radius image"></image>
+      </view>
+      <view class="margin-left-sm flex-treble">
+        <view class="overview">
+          <view class="text-black text-bold">
+            南京禄口机场亚朵酒店
+          </view>
+          <view>
+            <text class="border-bottom text-bold text-lg">4.8</text>
+            <text class="margin-left-sm">33</text>
+            <text class="text-gray text-sm"> 点评</text> · 
+            <text>64</text>
+            <text class="text-gray text-sm"> 收藏</text>
+          </view>
+          <view class="text-gray text-sm text-cut margin-top-sm">位于禄口机场旁边</view>
+          <view class="margin-top-sm">
+            <text class="cu-tag bg-blue light">购物天堂</text>
+            <text class="cu-tag bg-blue light">中转停留</text>
+          </view> 
+        </view>
+        <view class="fr">
+          <text class="text-price text-red price">4234</text>
+          <text class="text-gray"> 起</text>
+        </view> 
+      </view>
+    </view>
+  </view>
+</template>

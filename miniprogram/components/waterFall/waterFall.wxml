@@ -1,0 +1,17 @@
+<view class="fall-container">
+    <!-- 左边一列 -->
+    <view class="fall-left">
+      <block wx:for="{{leftList}}" wx:key="{{item._id}}">
+        <!--瀑布流内容卡片-->
+        <card data="{{item}}" data-postId="{{item._id}}" data-openid="{{item._openid}}" bindtap="onDetailTap" />
+      </block>
+    </view>
+    <!-- 右边一列 -->
+    <view class="fall-right">
+      <block wx:for="{{rightList}}" wx:key="{{item._id}}">
+        <!--瀑布流内容卡片-->
+        <!-- <template is='card' data="{{data:item}}" /> -->
+        <card data="{{item}}" data-postId="{{item._id}}" data-openid="{{item._openid}}" bindtap="onDetailTap" />
+      </block>
+    </view>
+  </view>

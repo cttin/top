@@ -1,0 +1,17 @@
+<home id="home" wx:if="{{PageCur === 'home'}}" isFixed="{{isFixed}}"></home>
+<trending wx:if="{{PageCur === 'trending'}}"></trending>
+<user wx:if="{{PageCur === 'user'}}"></user>
+<view class="cu-bar bg-white shadow foot">
+  <view class="action flex-direction {{PageCur=='home'?'text-cerulean':'text-gray'}}" bindtap="NavChange" data-cur="home">
+    <view><text class="cuIcon-homefill lg"></text></view>
+    <view>首页</view>
+  </view>
+  <view class="action flex-direction {{PageCur=='trending'?'text-cyan':'text-gray'}}" bindtap="NavChange" data-cur="trending">
+    <text class="cuIcon-discoverfill lg"></text>
+    <view>排行榜</view>
+  </view>
+  <view class="action flex-direction {{PageCur=='user'?'text-cyan':'text-gray'}}" bindtap="NavChange" data-cur="user">
+    <text class="cuIcon-profilefill lg"></text>
+    <view>我的</view>
+  </view>
+</view>

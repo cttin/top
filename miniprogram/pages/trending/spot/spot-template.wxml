@@ -1,0 +1,23 @@
+<template name="viewSpot">
+  <view class="spot cu-card case">
+    <view class="cu-item full-screen">
+      <view class="image">
+        <image src="https://i.loli.net/2019/09/28/OGxIjSFwNCL4zaH.jpg" mode="widthFix"></image>
+        <view class="cu-tag bg-blue">景点 TOP1</view>
+      </view>
+      <view class="cu-list">
+        <view class="cu-item">
+          <view class="nav-title margin-sm">南京大屠杀纪念馆</view>
+          <view class="text-gray text-sm margin-bottom">
+            <text class="margin-lr-xs">{{34342342}} 搜索</text> |
+            <text class="margin-lr-xs">{{10545}} 浏览</text>
+          </view>
+          <view class="article bg_rank--pink padding-sm radius-lg">
+            <text class="article-summary">1937年12月13日，侵华日军占领了南京，随即对南京手无寸铁的民众以及放下武器的战俘进行惨绝人寰的大屠杀，屠杀加上抢劫、强奸和纵火，持续了六周，累积30万国人罹难。这段历史的伤痛应该被永远铭记！
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

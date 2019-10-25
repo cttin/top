@@ -1,0 +1,140 @@
+<!-- 主页面 -->
+<scroll-view scroll-y class="recommendDetail {{commentDrawerModal?'show':''}}">
+  <view class='cu-custom'>
+    <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+        <text class='cuIcon-back'></text> 返回
+      </navigator>
+      <!-- <view class='content' style='top:{{StatusBar}}px;'>Tab索引</view> -->
+    </view>
+  </view>
+  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="{{false}}" interval="5000" duration="500" bindchange="cardSwiper">
+    <!-- <swiper-item wx:for="{{detail.content.length && detail.content[0}.images}" wx:key> -->
+    <swiper-item wx:for="{{detail.detail.cover}}" wx:key>
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <!-- 注意：这个模板里面应该不会有video，video放到排行版的详情页里面 -->
+      <video src="{{item.url}}" autoplay="{{true}}" loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
+  <view class="detail">
+    <view wx:for="{{detail.detail.content}}" wx:key class="detail-desc {{ellipsis?'ellipsis':'unellipsis'}}">
+      <image wx:for="{{item.images}}" wx:for-item="img" src="{{img}}" wx:key="idx"></image>
+      <text>{{item.text}}</text>
+    </view>
+    <!-- <text class="detail-desc {{ellipsis?'ellipsis':'unellipsis'}}">{{detail.content}}</text> -->
+    <button class="cu-btn round" bindtap="ellipsis">{{ellipsis?'展开':'收起'}}</button>
+    <view class="post-time">拍摄于 {{detail.createtime}}</view>
+    <view class="favorite">
+      <view class="cu-avatar-group">
+        <view class="cu-avatar round" wx:for="{{likeInfo.data}}" wx:key wx:if="{{index<5}}" style="background-image:url({{item.avatar}});"></view>
+      </view>
+      <view class="cu-capsule round" bindtap="onLikeClick">
+        <view class="cu-tag bg-pink {{likeInfo.status ? 'text-red' : ''}}">
+          <text class="cuIcon-likefill"></text>
+        </view>
+        <view class="cu-tag line-pink">
+          {{likeInfo.count}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 评论框 -->
+  <view id='comment'>
+    <form bindsubmit="formSubmit">
+      <view class="cu-bar input">
+        <view class="cu-avatar round" style="background-image:url({{avatar}});"></view>
+        <input class="solid-bottom margin-xs" value="{{addComment.comment}}" maxlength="300" cursor-spacing="10" placeholder="{{placeholder}}" name="comment" focus="{{mainFocus}}" bindblur="onCommentBlur" bindinput="getCommentText" data-target="mainFocus"></input>
+        <button class='cu-btn bg-green shadow-blur' form-type='submit' open-type='getUserInfo'>
+          发送
+        </button>
+      </view>
+    </form>
+  </view>
+  <view class="cu-list menu menu-avatar comment comment-ellipsis">
+    <block wx:for="{{commentInfo}}" wx:for-index="index" wx:for-item="comment" wx:if="{{index < 5}}" wx:key>
+      <view class="cu-item">
+        <view class="cu-avatar round" style="background-image:url({{comment.avatar}});">
+        </view>
+        <view class="content" bindtap="replyComment" data-id="{{comment._id}}" data-openid="{{comment._openid}}" data-name="{{comment.name}}" data-avatar="{{comment.avatar}}" data-target="deleteMainModal">
+          <view>
+            <text class="text-bold">{{comment.name}}</text>
+            <view wx:if="{{comment.to_open_id}}">
+              <text class="margin-left-xs margin-right-xs">回复</text>
+              <text class="text-bold">{{comment.to_user_name}}</text>
+            </view>
+            <text class="text-gray margin-left-sm text-df">{{comment.createtime}}</text>
+          </view>
+          <view class="text-gray">
+            {{comment.content}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="more-comment text-gray bg-white solid-top" wx:if="{{commentInfo.length > 5}}" bindtap="showModal" data-target="commentDrawerModal">
+    查看全部 {{commentInfo.length}} 条回复
+    <text class='cuIcon-forward'></text>
+  </view>
+</scroll-view>
+
+<!-- 删除评论对话框 -->
+<view class="cu-modal bottom-modal {{deleteMainModal?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-green" bindtap="removeComment" data-target="deleteMainModal">确定</view>
+      <view class="action text-blue" bindtap="hideModal" data-target="deleteMainModal">取消</view>
+    </view>
+    <view class="padding-xl text-red">
+      确定删除该评论？
+    </view>
+  </view>
+</view>
+
+<!-- 查看评论详情抽屉对话框 -->
+<!-- 列表 -->
+<view class="DrawerClose {{commentDrawerModal?'show':''}}" data-target="commentDrawerModal" bindtap="hideModal">
+  <text class="cuIcon-pullright"></text>
+</view>
+<scroll-view scroll-y class="DrawerWindow {{commentDrawerModal?'show':''}}">
+  <view class="cu-list menu menu-avatar comment drawer-bottom-xxl shadow-lg">
+    <block wx:for="{{commentInfo}}" wx:for-index="index" wx:for-item="comment" wx:key>
+      <view class="cu-item">
+        <view class="cu-avatar round" style="background-image:url({{comment.avatar}});">
+        </view>
+        <view class="content" bindtap="replyComment" data-id="{{comment._id}}" data-openid="{{comment._openid}}" data-name="{{comment.name}}" data-avatar="{{comment.avatar}}" data-target="deleteDrawerModal">
+          <view>
+            <text class="text-bold">{{comment.name}}</text>
+            <view wx:if="{{comment.to_open_id}}">
+              <text class="margin-left-xs margin-right-xs">回复</text>
+              <text class="text-bold">{{comment.to_user_name}}</text>
+            </view>
+            <text class="text-gray margin-left-sm text-df">{{comment.createtime}}</text>
+          </view>
+          <view class="text-gray">
+            {{comment.content}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+<!-- 输入框 -->
+  <form bindsubmit="formSubmit">
+    <view class="cu-bar foot input {{drawerInputBottom!=0?'cur':''}}" style="bottom:{{drawerInputBottom}}px">
+      <view class="cu-avatar round" style="background-image:url({{avatar}});"></view>
+      <input class="solid-bottom margin-xs" value="{{addComment.comment}}" bindfocus="inputFocus" bindblur="inputBlur" placeholder="{{placeholder}}" adjust-position="{{false}}" focus="{{drawerFocus}}" maxlength="300" name="comment" cursor-spacing="10" bindinput="getCommentText" data-target="drawerFocus"></input>
+      <button class="cu-btn bg-green shadow" form-type='submit'>发送</button>
+    </view>
+  </form>
+<!-- 删除弹框 -->
+  <view class="cu-modal bottom-modal {{deleteDrawerModal?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white">
+        <view class="action text-green" bindtap="removeComment" data-target="deleteDrawerModal">确定</view>
+        <view class="action text-blue" bindtap="hideModal" data-target="deleteDrawerModal">取消</view>
+      </view>
+      <view class="padding-xl text-red">
+        确定删除该评论？
+      </view>
+    </view>
+  </view>
+</scroll-view>

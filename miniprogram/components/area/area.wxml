@@ -1,0 +1,46 @@
+<view class="area">
+  <!-- <view bindtap="showArea" class="text-bold">{{weatherData.currentCity}}
+    <text class="cuIcon-unfold"></text>
+  </view> -->
+  <!-- 遮罩层 -->
+  <view wx:if="{{areas}}" class="shadow"></view>
+  <view wx:if="{{areas}}" animation="{{animationData}}" class="vertical-box">
+    <cu-custom bgImage="https://cdn.pixabay.com/photo/2019/10/11/22/42/autumn-4542837__480.jpg">
+      <view slot="content">目的地切换</view>
+    </cu-custom>
+    <!-- <view class="align-center cf margin-top">
+      <text class="select-area self-align--center">目的地切换</text>
+      <button class="cu-btn round bg-white fr" bindtap="hideModal">取消</button>
+    </view> -->
+    <view class="cu-bar search bg-white">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索目的地" confirm-type="search"></input>
+      </view>
+      <button class="cu-btn round bg-white fr" bindtap="hideModal">取消</button>
+    </view>
+    <view class="area-content">
+      <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 89rpx)">
+        <view class="cu-item {{index==TabCur?'text-green cur':''}} border" wx:for="{{areaList}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+          {{item.country}}
+        </view>
+      </scroll-view>
+      <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 89rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+        <view class="padding-top padding-lr" wx:for="{{areaList}}" wx:key id="main-{{index}}">
+          <view class='cu-bar solid-bottom bg-white'>
+            <view class='action'>
+              <text class='cuIcon-title text-green'></text> {{item.country}} </view>
+          </view>
+          <view class="bg-white padding">
+            <view class="cu-list grid col-3">
+              <view class="cu-item bg-img" bindtap="areaSelect" wx:for="{{item.city}}" wx:for-item="city" wx:key="name" data-info="{{city}}">
+                <image class="image" src="{{city.logo}}" mode="aspectFill"></image>
+                <text>{{city.name}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<template name="strategy">
+  <view class="strategy gap solid-bottom">
+    <view class="flex">
+      <view class="nav-title margin-left-sm flex-treble title">{{title}}</view>
+      <view class="flex-twice">
+        <image src="{{cover.url}}" mode="aspectFill" class="radius image"></image>
+      </view>
+    </view>
+    <view class="margin-top-sm text-gray text-sm flex justify-between align-center">
+      <view class="cu-tag radius bg-purple light">攻略</view>      
+      <view class="text-gray text-sm">
+        <text class="cuIcon-attentionfill margin-lr-xs"></text> {{view}}
+        <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+      </view>
+    </view>
+  </view>
+</template>

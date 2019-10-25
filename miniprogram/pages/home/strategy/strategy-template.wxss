@@ -1,0 +1,15 @@
+/* .strategy {
+  display: flex;
+  flex-direction: row;
+} */
+.strategy .title {
+  height: 250rpx;
+  overflow: hidden;
+}
+/* .strategy .radius {
+  border-radius: 12rpx;
+} */
+.strategy .image {
+  width: 100%;
+  height: 100%;
+}

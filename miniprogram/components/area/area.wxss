@@ -1,0 +1,69 @@
+/* components/area/area.wxss */
+.shadow {
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+  position: absolute;
+  top: 0;
+  background-color: #000;
+  opacity: 0.5;
+}
+.vertical-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 98;
+}
+
+.select-area {
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.area-content {
+  display: flex;
+}
+.VerticalNav.nav {
+  width: 200rpx;
+  white-space: initial;
+}
+.VerticalNav.nav .cu-item {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+  border: none;
+  /* height: 50px; */
+  position: relative;
+}
+.area .cu-list.grid>.cu-item {
+  padding: 0 0 10rpx;
+}
+.area .cu-list.grid>.cu-item::after {
+  border: 0;
+}
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+.VerticalNav.nav .cu-item.cur::after {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+.VerticalMain {
+  background-color: #f1f1f1;
+}
+.area .image {
+  width: calc((100vw - 200rpx - 2 * 30rpx - 2 * 20rpx - 20rpx)/3); /* 200rpx:左导航栏；30rpx：外边距；20rpx：内边距；20rpx：图片间距 */
+  height: calc((100vw - 200rpx - 2 * 30rpx - 2 * 20rpx - 20rpx)/3);
+}
+

@@ -1,0 +1,31 @@
+.spot .image>image{
+  height: 260rpx !important;
+}
+.full-screen {
+  margin: 30rpx;
+}
+.article::before {
+  content: "\201C";
+  /* 字体 */
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #e03997;
+  /*位置*/
+  position: absolute;
+  left: 10rpx;
+  top: 130rpx;
+  opacity: .2;
+}
+.article-summary {
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  text-align: left;
+  text-indent: 2em;
+}
+.radius-lg {
+  border-radius: 25rpx 25rpx 10rpx 10rpx;
+}

@@ -1,0 +1,16 @@
+<template name="route">
+  <view class="route solid-bottom cu-card radius margin">
+    <view class="flex margin-sm">
+      <view class="flex-twice">
+        <image src="https://cdn.pixabay.com/photo/2016/05/21/13/42/wildflowers-1406846__480.jpg" mode="aspectFill" class="radius image"></image>
+      </view>
+      <view class="margin-left-sm flex-treble">
+        <view class="title">
+          <view class="nav-title">周末京郊到昌平，五大体验征服你！</view>
+          <view class="cu-tag radius line-red margin-top-sm">攻略</view> 
+        </view>
+        <view class="text-gray text-sm text-cut">游玩2-3天 / 适宜3-5月，9-11月 / 3-5月最佳 / 9-11月温度最适宜 / 节假日人流量可能较多</view> 
+      </view>
+    </view>
+  </view>
+</template>

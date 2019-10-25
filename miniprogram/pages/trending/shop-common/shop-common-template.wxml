@@ -1,0 +1,29 @@
+<template name="shop-common">
+  <view class="shop-common solid-bottom cu-card radius margin">
+    <view class="flex margin-sm ">
+      <view class="flex-twice">
+        <image src="https://i.loli.net/2019/10/01/oC5dnSfXxblVPmO.jpg" mode="aspectFill" class="radius image"></image>
+      </view>
+      <view class="overview margin-left-sm flex-treble">
+        <view class="text-black text-bold">
+          回味鸭血粉丝汤
+        </view>
+        <view>
+          <text>33</text>
+          <text class="text-gray text-sm"> 点评 |</text>
+          <text class="text-gray text-sm"> 人均</text>
+          <text> 32</text> 元
+        </view>
+        <view class="margin-top-xs margin-bottom-xs">
+          <text class="cu-tag bg-red light">环境古色古香</text>
+          <text class="cu-tag bg-red light">小吃</text>
+        </view>
+        <view class="text-gray text-sm text-cut">位于夫子庙、秦淮河</view>
+      </view>
+      <view class="fr">
+        <view class="cuIcon-favor"></view>
+        <text class="text-gray">2k</text>
+      </view>
+    </view>
+  </view>
+</template>

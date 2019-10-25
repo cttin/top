@@ -1,0 +1,63 @@
+<!--components/chat/chat.wxml-->
+<scroll-view scroll-y>
+  <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">回复</view></cu-custom>
+  <view class="cu-chat">
+    <view class="cu-list menu menu-avatar comment">
+      <block wx:for="{{commentInfo}}" wx:for-index="index" wx:for-item="comment" wx:key>
+        <view class="cu-item">
+          <view class="cu-avatar round" style="background-image:url({{comment.avatar}});">
+          </view>
+          <view class="content" bindtap="replyComment" data-id="{{comment._id}}" data-openid="{{comment._openid}}" data-name="{{comment.name}}" data-avatar="{{comment.avatar}}">
+            <view>
+              <text class="text-bold">{{comment.name}}</text>
+              <view wx:if="{{comment.to_open_id}}">
+                <text class="margin-left-xs margin-right-xs">回复</text>
+                <text class="text-bold">{{comment.to_user_name}}</text>
+              </view>
+              <text class="text-gray margin-left-sm text-df">{{comment.createtime}}</text>
+            </view>
+            <view class="text-gray">
+              {{comment.content}}
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+    <view class="cu-avatar round" style="background-image:url({{avatar}});"></view>
+    <input class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" placeholder="{{placeholder}}" adjust-position="{{false}}" focus="{{focus}}" maxlength="300" cursor-spacing="10"></input>
+    <button class="cu-btn bg-green shadow">发送</button>
+  </view>
+</scroll-view>
+
+
+<!-- <scroll-view scroll-y class="DrawerWindow {{modalName=='commentModal'?'show':''}}">
+  <view class="cu-list menu menu-avatar comment">
+    <block wx:for="{{commentInfo}}" wx:for-index="index" wx:for-item="comment" wx:key>
+      <view class="cu-item">
+        <view class="cu-avatar round" style="background-image:url({{comment.avatar}});">
+        </view>
+        <view class="content" bindtap="replyComment" data-id="{{comment._id}}" data-openid="{{comment._openid}}" data-name="{{comment.name}}" data-avatar="{{comment.avatar}}">
+          <view>
+            <text class="text-bold">{{comment.name}}</text>
+            <view wx:if="{{comment.to_open_id}}">
+              <text class="margin-left-xs margin-right-xs">回复</text>
+              <text class="text-bold">{{comment.to_user_name}}</text>
+            </view>
+            <text class="text-gray margin-left-sm text-df">{{comment.createtime}}</text>
+          </view>
+          <view class="text-gray">
+            {{comment.content}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+    <view class="cu-avatar round" style="background-image:url({{avatar}});"></view>
+    <input class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" placeholder="{{placeholder}}" adjust-position="{{false}}" focus="{{focus}}" maxlength="300" cursor-spacing="10"></input>
+    <button class="cu-btn bg-green shadow">发送</button>
+  </view>
+</scroll-view> -->

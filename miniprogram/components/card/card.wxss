@@ -1,0 +1,3 @@
+.card .sub-text {
+  width: calc(100% - 48rpx - 30rpx - 20rpx);
+}

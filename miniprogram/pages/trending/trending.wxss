@@ -1,0 +1,29 @@
+/* pages/trending/trending.wxss */
+@import "./spot/spot-template";
+@import "./route/route-template";
+@import "./hotel/hotel-template";
+@import "./shop-common/shop-common-template";
+
+.trending_top--nav {
+  height: 340rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+.trending_search {
+  /* padding: 0rpx 0 30rpx 30rpx; */
+}
+.trending .cu-bar {
+  align-items: top;
+}
+.be-here{
+  overflow: hidden;
+  width: 400rpx;
+  height: 50rpx;
+  /* font-size: 24rpx; */
+  position: absolute;
+  z-index: 5;
+  right: 0;
+}
+.text-color {
+  color: rgb(144,232,245) !important;
+}

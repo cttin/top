@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "waterFall": "/components/waterFall/waterFall",
+    "global-list": "./global-list/global-list"
+  }
+}

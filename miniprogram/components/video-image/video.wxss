@@ -1,0 +1,69 @@
+/* components/video/video.wxss */
+
+.video_view--container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.video-wrap .control-btn {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.btns-wrap {
+  position: absolute;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250rpx;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+.btns-wrap .btns-common {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 22rpx;
+  width: 92rpx;
+  height: 44rpx;
+  font-family: PingFang-SC-Medium;
+  font-size: 20rpx;
+  color: #333;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 44rpx;
+  margin: 0 10rpx;
+}
+
+.btns-wrap .btns-active {
+  background: rgba(255, 57, 56, 0.8);
+  color: #fff;
+}
+
+.video-wrap .cover-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 990;
+}
+.video_img--wrap .video_img--ele {
+  width: 100%;
+  /* height: 750rpx; */
+  position: absolute;
+}
+.video_img--wrap .video_wrap--hidden {
+  transform: translateX(-100%);
+}
+.video_img--wrap .img_wrap--show {
+  transform: translateX(0);
+}
+

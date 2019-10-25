@@ -1,0 +1,38 @@
+<view class="cu-card card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="{{data.cover.url}}" style="height:{{data.cover.itemHeight}}px;width:{{data.cover.itemWidth}}px"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">{{data.summary}}</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content sub-text text-xs">
+          <text class="text-grey">{{data.author_name}}</text>
+          <view class="text-gray flex justify-between">
+            <text>{{data.site}}</text>
+            <view class="margin-right-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text>{{data.view}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="cu-item">
+        <view class="cu-avatar round sm" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub text-sm">
+          <view class="text-grey">正义天使 凯尔</view>
+          <view class="text-gray text-sm">
+            <view class="text-gray">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+          </view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+
+</view>

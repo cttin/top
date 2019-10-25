@@ -1,0 +1,98 @@
+page {
+  background-color:#f6f6f6;
+}
+#home {
+  /* height: 100vh; */
+}
+.top-bar {
+  /* position: fixed; */
+  position: fixed;
+  /* top: 129rpx; */
+  z-index: 99;
+  width: 100%;
+}
+.position-fixed {
+  
+}
+.swiper-list {
+  margin-top: 195rpx;
+}
+
+.search-modal {
+  /* margin-bottom: 160px; */
+}
+.search-modal.cu-modal {
+  text-align: inherit;
+}
+.search-modal .cu-dialog {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.cardTitle {
+  color: #333;
+  padding: 30rpx;
+  font-size: 32rpx;
+  font-weight: 300;
+  transform: skew(-10deg, 0deg);
+  position: relative;
+  text-shadow: 0px 0px 6rpx rgba(0,0,0,0.3)
+}
+.search-modal .cu-bar .search-form {
+  margin: 0 0 0 30rpx;
+}
+.search-modal .cu-list.card-menu {
+  border-radius: 0;
+
+}
+.search-modal .cu-list.menu>.cu-item {
+  padding: 0;
+}
+.search-modal .cu-list.menu>.cu-item .content>image, .search-modal .image {
+  width: 200rpx;
+  height: 150rpx;
+}
+.search-modal .cu-list.menu>.cu-item .content {
+  flex: initial;
+}
+
+.destination {
+  padding-top:200rpx;
+}
+
+.hot-spot .nav .cu-item {
+  line-height: inherit;
+}
+
+.route .title {
+  height: 180rpx;
+  overflow: hidden;
+}
+.route .image {
+  width: 100%;
+  height: 100%;
+}
+
+.hotel {
+  background: #fff;
+}
+.hotel .title {
+  height: 250rpx;
+  overflow: hidden;
+}
+.hotel .image {
+  width: 100%;
+  height: 100%;
+} 
+.hotel .overview {
+  height: 250rpx;
+}
+.border-bottom {
+  border-bottom: solid rgb(144,232,245);
+}
+.price {
+  font-size: 38rpx;
+}
+
+.search-modal .margin-top-history {
+  margin-top: 100rpx;
+}

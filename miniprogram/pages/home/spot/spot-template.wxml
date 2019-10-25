@@ -1,0 +1,23 @@
+<template name="spot">
+  <view class="container solid-bottom gap">
+    <view class="nav-title">{{title}}</view>
+    <view class="cu-card case">
+      <video-play class="cu-item" totalMargin="{{totalMargin}}" videoUrl="{{cover.url}}" coverUrl="{{cover.coverUrl}}"></video-play>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{avatar}});"></view>
+          <view class="content sub-text">
+            <view class="text-grey">{{author_name}}</view>
+            <view class="text-gray text-sm flex justify-between">
+              {{location}}
+              <view class="text-gray text-sm">
+                <text class="cuIcon-attentionfill margin-lr-xs"></text> {{view}}
+                <text class="cuIcon-messagefill margin-lr-xs"></text> {{comments}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

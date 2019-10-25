@@ -1,0 +1,52 @@
+<!--pages/trending/trending.wxml-->
+<import src="./spot/spot-template" />
+<import src="./route/route-template" />
+<import src="./hotel/hotel-template" />
+<import src="./shop-common/shop-common-template" />
+<view class="trending" style="top:{{CustomBar}}px">
+  <!-- <cu-custom bgImage="https://cdn.pixabay.com/photo/2019/10/11/22/42/autumn-4542837__480.jpg">
+    <view slot="content">排行榜</view>
+  </cu-custom> -->
+  <!-- <area id="area" weatherData="{{weatherData}}" bind:selectArea="getAreaInfo"></area> -->
+  <area id="area" bind:selectArea="getAreaInfo"></area>
+  <view class="trending_top--nav bg-img bg-mask" style="background-image: url({{selectedAreaInfo.logo}})">
+    <cu-custom>
+    <view slot="content">排行榜</view>
+  </cu-custom>
+    <view class="cu-bar search margin-left">
+      <view bindtap="showArea" class="text-bold">{{selectedAreaInfo.name}}
+        <text class="cuIcon-triangledownfill"></text>
+      </view>
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索美食、景点、酒店" confirm-type="search"></input>
+      </view>
+    </view>
+    <view class="cu-bar margin-right margin-left">
+      <view class="text-df">
+        <text>{{placeData.travels.numbers}}</text>
+        <text> 人在这里旅行</text>
+      </view>
+      <swiper autoplay="{{true}}" circular="true" vertical="true" interval="2000" duration="1000" class='be-here text-sm'>
+        <swiper-item wx:for="{{placeData.travels.Info}}" wx:key>
+          <view class="fr">
+            <text class="margin-right-xs">{{item.nickName}} </text>
+            <text class="text-purple">最近来过</text>
+          </view>
+          <view class="cu-avatar sm round margin-right-sm fr" style="background-image:url({{item.avatar}})"></view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <view class="cu-list grid col-5 no-border">
+    <view class="cu-item" wx:for="{{topics}}" wx:key bindtap="handleTopicshange" data-topic="{{item.field}}">
+      <view class="cuIcon-{{item.icon}} text-{{item.color}}">
+      </view>
+      <text class="{{item.field===currentActive?'text-color':''}}">{{item.name}}</text>
+    </view>
+  </view>
+  <template is="viewSpot" wx:if="{{currentActive === 'spot'}}"></template>
+  <template is="route" wx:if="{{currentActive === 'route'}}"></template>
+  <template is="hotel" wx:if="{{currentActive === 'hotel'}}"></template>
+  <template is="shop-common" wx:if="{{currentActive === 'food' || currentActive === 'shop'}}"></template>
+</view>

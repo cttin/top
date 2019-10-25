@@ -1,0 +1,16 @@
+<!--components/video/video.wxml-->
+<!-- 视频 -->
+<view class="video-wrap">
+  <video style="width: {{videoWidth}}px;height: {{videoHeight}}px" src="{{videoUrl}}" bindfullscreenchange="handleFullScreenChange" bindended="handleVideoEnded" id="video" autoplay="{{autoplay}}" loop="{{false}}" muted="{{muted}}" controls="{{true}}" show-center-play-btn="{{false}}"
+    class="video-wrap">
+    <cover-view class="video_view--container" wx:if="{{!play}}">
+      <!-- 覆盖图片 -->
+      <cover-image src="{{coverUrl}}" class="cover-image">
+      </cover-image>
+      <!-- 播放按钮 -->
+      <cover-view class="control-btn" catchtap="controlVideo">
+        <cover-image src="https://si.geilicdn.com/img-4933000001685b263c400a20b7b9-unadjust_100_100.png"></cover-image>
+      </cover-view>
+    </cover-view>
+  </video>
+</view>

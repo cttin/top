@@ -1,0 +1,11 @@
+/* pages/user/user.wxss */
+.user {
+  /* background: #fff; */
+}
+.user .userInfo-avatar {
+  width: 160rpx;
+  height: 160rpx;
+}
+.user .userInfo {
+  /* display:  */
+}
