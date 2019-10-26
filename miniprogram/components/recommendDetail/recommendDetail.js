@@ -1,13 +1,14 @@
 const common = require('../../common/index')
 const app = getApp();
 const userInfo = wx.getStorageSync('userInfo') || '';
-console.log(userInfo, app)
+console.log(userInfo, app, 'app')
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     // Custom: app.globalData.Custom,
-    avatar: userInfo ? userInfo.avatarUrl : '',
+    userInfo: wx.getStorageSync('userInfo') || '',
+    // avatar: userInfo ? userInfo.avatarUrl : '',
     id: '', // postId
     openId: '', // 用户openid
     cardCur: 0,
@@ -25,27 +26,29 @@ Page({
     drawerInputBottom: 0
   },
   onLoad: function(options) {
-    console.log(options, 'options')
     // this.data.id = options.id;
     // this.data.openId = options.openId;
-    this.setData({
-      id: options.id,
-      openId: options.openId
-    })
+    if(!this.userInfo) {
+      this.data.userInfo = wx.getStorageSync('userInfo');
+      this.setData({
+        id: options.id,
+        openId: options.openId,
+        userInfo: this.data.userInfo
+      })
+    }else {
+      this.setData({
+        id: options.id,
+        openId: options.openId
+      })
+    }
     this.getDetail();
     this.getLikeInfo();
   },
   onShow() {
-    console.log(app.globalData.userInfo)
     this.getCommentInfo();
   },
   onReady() {
-    // const userInfo = getStorageSync('userInfo');
-    if (userInfo) {
-      this.setData({
-        avatar: userInfo.avatarUrl
-      })
-    }
+    console.log('ready')
   },  
   // 获取数据
   getDetail() {
@@ -168,8 +171,8 @@ Page({
         dbName: 'like_collection',
         data: {
           post_id: this.data.id,
-          avatar: userInfo.avatarUrl,
-          name: userInfo.nickName,
+          avatar: this.data.userInfo.avatarUrl,
+          name: this.data.userInfo.nickName,
           type: 1, // 推荐
         }
       }
@@ -257,8 +260,8 @@ Page({
     const data = {
       post_id: this.data.id, // 调试完了记得删除
       // _openid: this.data.openId || openId, 
-      name: userInfo.nickName,
-      avatar: userInfo.avatarUrl,
+      name: this.data.userInfo.nickName,
+      avatar: this.data.userInfo.avatarUrl,
       content: comment,
       status: 1, // 正常
       createtime: Date.now(),

@@ -80,6 +80,14 @@ Component({
   },
   lifetimes: {
     ready: function () {
+      console.log('sfs', this.data.placeHolder)
+      if(!this.data.placeHolder) { // 防止出现登录信息清除时没有获取到的情况
+        const city = wx.getStorageSync('currentCity') || '南京';
+        this.setData({
+          placeHolder: city,
+          'tabs[1].name': city
+        })
+      }
       this.initData();
       const history = wx.getStorageSync('history') || [];
       this.setData({
@@ -89,12 +97,10 @@ Component({
   },
   pageLifetimes: {
     show: function () {
-      console.log(33)
      },
   },
   methods: {
     onReady() {
-      console.log('sfs')
     },
     onShow() {
       console.log('show')
@@ -103,7 +109,6 @@ Component({
       console.log('load')
     },
     topLoad() {
-      console.log(111, 'helllllllll')
     },
 
     // 输入框获取焦点

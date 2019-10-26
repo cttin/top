@@ -12,7 +12,7 @@
         <view class="content sub-text text-xs">
           <text class="text-grey">{{data.author_name}}</text>
           <view class="text-gray flex justify-between">
-            <text>{{data.site}}</text>
+            <text>{{data.location}}</text>
             <view class="margin-right-sm">
               <text class="cuIcon-attentionfill margin-lr-xs"></text>{{data.view}}
             </view>

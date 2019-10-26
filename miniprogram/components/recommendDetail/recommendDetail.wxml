@@ -42,7 +42,7 @@
   <view id='comment'>
     <form bindsubmit="formSubmit">
       <view class="cu-bar input">
-        <view class="cu-avatar round" style="background-image:url({{avatar}});"></view>
+        <view class="cu-avatar round" style="background-image:url({{userInfo.avatarUrl}});"></view>
         <input class="solid-bottom margin-xs" value="{{addComment.comment}}" maxlength="300" cursor-spacing="10" placeholder="{{placeholder}}" name="comment" focus="{{mainFocus}}" bindblur="onCommentBlur" bindinput="getCommentText" data-target="mainFocus"></input>
         <button class='cu-btn bg-green shadow-blur' form-type='submit' open-type='getUserInfo'>
           发送
@@ -120,7 +120,7 @@
 <!-- 输入框 -->
   <form bindsubmit="formSubmit">
     <view class="cu-bar foot input {{drawerInputBottom!=0?'cur':''}}" style="bottom:{{drawerInputBottom}}px">
-      <view class="cu-avatar round" style="background-image:url({{avatar}});"></view>
+      <view class="cu-avatar round" style="background-image:url({{userInfo.avatarUrl}});"></view>
       <input class="solid-bottom margin-xs" value="{{addComment.comment}}" bindfocus="inputFocus" bindblur="inputBlur" placeholder="{{placeholder}}" adjust-position="{{false}}" focus="{{drawerFocus}}" maxlength="300" name="comment" cursor-spacing="10" bindinput="getCommentText" data-target="drawerFocus"></input>
       <button class="cu-btn bg-green shadow" form-type='submit'>发送</button>
     </view>

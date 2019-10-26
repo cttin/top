@@ -11,7 +11,7 @@ Page({
     weatherData: {},
     // site: wx.getStorageSync('currentCity'),
     selectedAreaInfo: {
-      name: wx.getStorageSync('currentCity'),
+      name: wx.getStorageSync('currentCity') || '南京',
       logo: 'https://cdn.pixabay.com/photo/2019/09/18/07/09/meadow-4485609__480.jpg'
     },
     placeData: {
@@ -79,22 +79,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(333)
-    const BMap = new bmap.BMapWX({
-      ak: this.data.ak
-    });
-    BMap.weather({
-      success: data => {
-        const weatherData = data.currentWeather[0];
-        this.setData({
-          weatherData
-        });
-        console.log(data, 'data')
-      },
-      fail: (err) => {
-        console.log(err)
-      }
-    })
+    // const BMap = new bmap.BMapWX({
+    //   ak: this.data.ak
+    // });
+    // BMap.weather({
+    //   success: data => {
+    //     const weatherData = data.currentWeather[0];
+    //     this.setData({
+    //       weatherData
+    //     });
+    //     console.log(data, 'data')
+    //   },
+    //   fail: (err) => {
+    //     console.log(err)
+    //   }
+    // })
   },
 
   /**
